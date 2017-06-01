@@ -1,0 +1,9 @@
+.Message {}
+
+.Message-local {
+  align-self: flex-start;
+}
+
+.Message-user {
+  align-self: flex-end;
+}

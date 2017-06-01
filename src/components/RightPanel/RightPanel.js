@@ -1,12 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './RightPanel.css';
+
+import Conversation from '../../modules/chat/components/Conversation/Conversation';
 
 const RightPanel = () => (
   <article className='RightPanel'>
     <section>
-      right panel
+      <Conversation />
     </section>
   </article>
 );

@@ -1,18 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './Conversation.css';
 
-const Conversation = ({ chatHistory }) => (
+import { getMessages } from '../../data/selectors';
+import MessagesList from '../MessagesList/MessagesList';
+
+const Conversation = ({ messages }) => (
   <article className='Conversation'>
-    <section>
-      left panel
+    <section className='Conversation-messages-wrapper'>
+      <MessagesList messages={messages} />
+    </section>
+
+    <section className='Conversation-input-wrapper'>
+      <textarea></textarea>
     </section>
   </article>
 );
 
+const mapStateToProps = (state) => ({
+  messages: getMessages(state),
+});
+
+const mapDispatchToProps = {};
+
 Conversation.propTypes = {
-  chatHistory: PropTypes.array.isRequired,
+  messages: PropTypes.array.isRequired,
 };
 
-export default Conversation;
+export default connect(mapStateToProps, mapDispatchToProps)(Conversation);
