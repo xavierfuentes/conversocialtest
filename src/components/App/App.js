@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 
 import './App.css';
 
+import { HEADER_TITLE } from '../../data/constants';
+
+import TopBar from '../TopBar/TopBar';
+import LeftPanel from '../LeftPanel/LeftPanel';
+import RightPanel from '../RightPanel/RightPanel';
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <TopBar title={HEADER_TITLE} />
+        <LeftPanel chatHistory={[]} />
+        <RightPanel chat={{}} />
       </div>
     );
   }
