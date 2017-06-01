@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import './TopBar.css';
 
-import { HEADER_BUTTON_ADD_CHAT } from '../../data/constants';
+import { HEADER_TITLE, HEADER_BUTTON_ADD_CHAT } from '../../data/constants';
 
-const TopBar = ({ title }) => (
+const TopBar = () => (
   <article className='TopBar'>
     <section>
       <header>
-        <h1 className='TopBar-title'>{title}</h1>
+        <h1 className='TopBar-title'>{HEADER_TITLE}</h1>
       </header>
     </section>
     <section>
@@ -17,9 +17,5 @@ const TopBar = ({ title }) => (
     </section>
   </article>
 );
-
-TopBar.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default TopBar;

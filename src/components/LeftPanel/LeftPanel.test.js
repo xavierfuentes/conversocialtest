@@ -7,7 +7,7 @@ describe('<LeftPanel />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<LeftPanel chatHistory={[]}/>);
+    wrapper = shallow(<LeftPanel/>);
   });
 
   test('renders a basic left panel layout', () => {
