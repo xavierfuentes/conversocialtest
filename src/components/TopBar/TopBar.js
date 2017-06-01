@@ -6,14 +6,14 @@ import './TopBar.css';
 import { HEADER_BUTTON_ADD_CHAT } from '../../data/constants';
 
 const TopBar = ({ title }) => (
-  <article>
+  <article className='TopBar'>
     <section>
       <header>
-        <h1>{title}</h1>
+        <h1 className='TopBar-title'>{title}</h1>
       </header>
     </section>
     <section>
-      <button>{HEADER_BUTTON_ADD_CHAT}</button>
+      <button className='TopBar-cta'>{HEADER_BUTTON_ADD_CHAT}</button>
     </section>
   </article>
 );

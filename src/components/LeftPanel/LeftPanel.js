@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './LeftPanel.css';
 
 const LeftPanel = ({ chatHistory }) => (
-  <article>
+  <article className='LeftPanel'>
     <section>
       left panel
     </section>

@@ -1,0 +1,11 @@
+.TopBar {
+
+}
+
+.TopBar .TopBar-title {
+  text-align: center
+}
+
+.TopBar .TopBar-cta {
+  border-radius: 2em;
+}

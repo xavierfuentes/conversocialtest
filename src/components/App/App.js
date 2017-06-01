@@ -11,11 +11,13 @@ import RightPanel from '../RightPanel/RightPanel';
 class App extends Component {
   render() {
     return (
-      <div>
+      <article className='App'>
         <TopBar title={HEADER_TITLE} />
-        <LeftPanel chatHistory={[]} />
-        <RightPanel chat={{}} />
-      </div>
+          <section className='App-content'>
+            <LeftPanel chatHistory={[]} />
+            <RightPanel chat={{}} />
+          </section>
+      </article>
     );
   }
 }
