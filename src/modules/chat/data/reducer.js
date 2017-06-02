@@ -1,6 +1,7 @@
 import { v4 } from 'uuid';
 
 import { SEND_MESSAGE_REQUEST } from './types';
+import { BOT_WELCOME_MESSAGE } from './constants';
 
 const id = v4();
 const initialState = {
@@ -9,7 +10,7 @@ const initialState = {
       id,
       sentAt: new Date(),
       author: { id: 0 },
-      text: 'Welcome to the chat',
+      text: BOT_WELCOME_MESSAGE,
     },
   },
 };

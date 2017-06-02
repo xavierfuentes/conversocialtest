@@ -2,7 +2,7 @@ import React from 'react';
 
 import './RightPanel.css';
 
-import Conversation from '../../modules/chat/components/Conversation/Conversation';
+import Conversation from '../../modules/chat/containers/Conversation/Conversation';
 
 const RightPanel = () => (
   <article className='RightPanel'>

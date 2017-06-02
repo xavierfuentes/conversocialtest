@@ -1,6 +1,7 @@
 import { v4 } from 'uuid';
 
 import { SEND_MESSAGE_REQUEST } from './types';
+import { BOT_PRE_MESSAGE } from './constants';
 
 export const sendMessageRequest = text => {
   const idUserMessage = v4();
@@ -16,7 +17,7 @@ export const sendMessageRequest = text => {
       author: { id: 0 },
       id: idBotMessage,
       sentAt: new Date(),
-      text: `You Said: ${text}`,
+      text: `${BOT_PRE_MESSAGE}: ${text}`,
     },
   };
 
