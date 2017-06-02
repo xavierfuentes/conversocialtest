@@ -17,7 +17,15 @@ const initialState = {
 const chatReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SEND_MESSAGE_REQUEST: {
-      const newstate = { ...state, messages: { ...state.messages, [payload.message.id]: payload.message } };
+      const messagesIds = Object.keys(payload.messages);
+      const newstate = {
+        ...state,
+        messages: {
+          ...state.messages,
+          [messagesIds[0]]: payload.messages[messagesIds[0]],
+          [messagesIds[1]]: payload.messages[messagesIds[1]],
+        },
+      };
       return newstate;
     }
 
