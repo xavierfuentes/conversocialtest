@@ -7,23 +7,34 @@ import './Conversation.css';
 import { getMessages } from '../../data/selectors';
 import MessagesList from '../MessagesList/MessagesList';
 
-const Conversation = ({ messages }) => (
-  <article className='Conversation'>
-    <section className='Conversation-messages-wrapper'>
-      <MessagesList messages={messages} />
-    </section>
+import { sendMessageRequest } from '../../data/actions';
+import MessageInput from '../MessageInput/MessageInput';
 
-    <section className='Conversation-input-wrapper'>
-      <textarea></textarea>
-    </section>
-  </article>
-);
+const Conversation = ({ messages, sendMessage }) => {
+  const addMessage = messageText => {
+    sendMessage(messageText);
+  };
 
-const mapStateToProps = (state) => ({
+  return (
+    <article className="Conversation">
+      <section className="Conversation-messages-wrapper">
+        <MessagesList messages={messages} />
+      </section>
+
+      <section className="Conversation-input-wrapper">
+        <MessageInput onMessageSent={addMessage} />
+      </section>
+    </article>
+  );
+};
+
+const mapStateToProps = state => ({
   messages: getMessages(state),
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  sendMessage: sendMessageRequest,
+};
 
 Conversation.propTypes = {
   messages: PropTypes.array.isRequired,

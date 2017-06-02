@@ -7,8 +7,8 @@ import Message from '../Message/Message';
 
 const MessagesList = ({ messages }) => (
   <article className="MessagesList">
-    {messages.map(({ id, text, author }) => (
-      <Message text={text} key={id} author={author}/>
+    {messages.map(message => (
+      <Message message={message} key={message.id} />
     ))}
   </article>
 );
